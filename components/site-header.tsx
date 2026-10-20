@@ -55,7 +55,7 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`relative py-2 text-[0.7rem] font-semibold tracking-[0.2em] uppercase transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-gold after:transition-transform after:duration-500 ${
+                  className={`relative py-2 text-[0.7rem] font-semibold tracking-[0.2em] uppercase transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-accent after:transition-transform after:duration-500 ${
                     isActive(item.href)
                       ? "text-chalk after:scale-x-100"
                       : "text-mist hover:text-chalk after:scale-x-0 hover:after:scale-x-100"

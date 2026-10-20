@@ -28,7 +28,7 @@ export function Parents() {
           <ul className="grid gap-px bg-white/10 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
             {parentExpectations.map((item, i) => (
               <Reveal as="li" key={item.title} delay={(i % 4) * 70} className="bg-ink p-6">
-                <span className="block h-px w-6 bg-gold" aria-hidden="true" />
+                <span className="block h-px w-6 bg-accent" aria-hidden="true" />
                 <h3 className="mt-5 font-display text-2xl">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-mist">{item.body}</p>
               </Reveal>

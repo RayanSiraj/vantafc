@@ -19,7 +19,7 @@ export function EventCard({ event }: { event: VantaEvent }) {
   return (
     <article className="grid gap-6 border border-white/10 bg-char p-6 transition-colors hover:border-white/25 sm:grid-cols-[7rem_1fr_auto] sm:items-center sm:p-8">
       <div className="flex items-baseline gap-3 sm:flex-col sm:gap-0">
-        <span className="eyebrow text-gold">{date.month}</span>
+        <span className="eyebrow text-accent">{date.month}</span>
         <time dateTime={event.date} className="font-display text-6xl">{date.day}</time>
         <span className="text-sm text-steel">{date.weekday}</span>
       </div>

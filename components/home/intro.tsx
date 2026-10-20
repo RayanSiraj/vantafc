@@ -10,8 +10,9 @@ export function Intro() {
       <Container className="grid gap-16 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-7">
           <Reveal>
-            <p className="eyebrow mb-5 flex items-center gap-3 text-gold">
+            <p className="eyebrow mb-5 flex items-center gap-3 text-accent">
               <span className="h-px w-8 bg-current" aria-hidden="true" />
+              <span className="size-1.5 rotate-45 bg-current" aria-hidden="true" />
               Who we are
             </p>
             <h2 id="intro-title" className="font-display text-6xl sm:text-7xl lg:text-8xl">

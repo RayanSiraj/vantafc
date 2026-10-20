@@ -15,6 +15,8 @@ export const site = {
     mapEmbedUrl:
       "https://www.google.com/maps?q=Davis+Park+St.+Johns+County+Florida&output=embed",
   },
+  /** Google Calendar appointment schedule for private sessions. Paste the booking page URL or the `src` from Calendar's "Website embed → Inline booking page" code. `null` renders "coming soon". */
+  booking: { privateSessionsUrl: null as string | null },
   /** Set to a real address once it is live. `null` renders "Email coming soon". */
   email: null as string | null,
   /** Add a URL to each network once the handle exists. `null` renders "Coming soon". */
@@ -51,6 +53,7 @@ export const footerNav: { heading: string; links: NavItem[] }[] = [
     heading: "Play",
     links: [
       { label: "Programs", href: "/programs" },
+      { label: "Book a Session", href: "/book" },
       { label: "Development", href: "/development" },
       { label: "Events", href: "/events" },
       { label: "FAQ", href: "/faq" },
@@ -59,3 +62,4 @@ export const footerNav: { heading: string; links: NavItem[] }[] = [
 ];
 
 export const joinHref = "/join";
+export const bookHref = "/book";

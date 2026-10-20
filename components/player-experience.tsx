@@ -34,13 +34,13 @@ export function PlayerExperience() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                  <span className="eyebrow text-gold">0{i + 1}</span>
+                  <span className="eyebrow text-accent">0{i + 1}</span>
                   <h3 className="mt-2 font-display text-4xl lg:text-5xl">{e.step}</h3>
                   <p className="mt-2 text-sm text-mist">{e.body}</p>
                 </div>
               </div>
               {i < experience.length - 1 && (
-                <span aria-hidden="true" className="absolute top-1/2 -right-3 z-10 hidden h-6 w-6 -translate-y-1/2 items-center justify-center bg-gold text-xs text-ink md:flex">→</span>
+                <span aria-hidden="true" className="absolute top-1/2 -right-3 z-10 hidden h-6 w-6 -translate-y-1/2 items-center justify-center bg-accent text-xs text-ink md:flex">→</span>
               )}
             </Reveal>
           ))}

@@ -28,7 +28,7 @@ export function VantaStandard() {
             >
               <div className="flex items-start justify-between">
                 <span className="font-display text-7xl text-white/15 transition-colors duration-500 group-hover:text-ink/15">{p.number}</span>
-                <span className="mt-3 h-2 w-2 rotate-45 bg-gold" aria-hidden="true" />
+                <span className="mt-3 h-2 w-2 rotate-45 bg-accent" aria-hidden="true" />
               </div>
               <div>
                 <h3 className="font-display text-4xl sm:text-5xl">{p.title}</h3>

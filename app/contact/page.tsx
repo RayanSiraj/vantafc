@@ -19,7 +19,7 @@ export default function ContactPage() {
       <Section tone="coal" className="pt-16! sm:pt-20!">
         <Container className="grid gap-4 lg:grid-cols-3">
           <Reveal className="border border-white/10 bg-ink p-8 sm:p-10">
-            <p className="eyebrow text-gold">Club</p>
+            <p className="eyebrow text-accent">Club</p>
             <p className="mt-6 font-display text-5xl">Vanta FC</p>
             <address className="mt-4 text-lg leading-relaxed text-mist not-italic">
               {site.location.venue}
@@ -29,9 +29,9 @@ export default function ContactPage() {
             <ButtonLink href={site.location.directionsUrl} external variant="secondary" className="mt-8">Get directions</ButtonLink>
           </Reveal>
           <Reveal delay={90} className="border border-white/10 bg-ink p-8 sm:p-10">
-            <p className="eyebrow text-gold">Email</p>
+            <p className="eyebrow text-accent">Email</p>
             {site.email ? (
-              <a href={`mailto:${site.email}`} className="mt-6 block font-display text-4xl break-all hover:text-gold">{site.email}</a>
+              <a href={`mailto:${site.email}`} className="mt-6 block font-display text-4xl break-all hover:text-accent">{site.email}</a>
             ) : (
               <p className="mt-6 font-display text-4xl text-mist">Email coming soon</p>
             )}
@@ -39,7 +39,7 @@ export default function ContactPage() {
             <ButtonLink href={joinHref} className="mt-8">Join Vanta</ButtonLink>
           </Reveal>
           <Reveal delay={180} className="border border-white/10 bg-ink p-8 sm:p-10">
-            <p className="eyebrow text-gold">Social</p>
+            <p className="eyebrow text-accent">Social</p>
             <SocialLinks className="mt-6 space-y-4! text-2xl" />
             <p className="mt-6 text-sm text-steel">Official Vanta FC accounts will be linked here when they launch.</p>
           </Reveal>

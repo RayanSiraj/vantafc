@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { StatusBadge } from "@/components/status-badge";
 import { programs } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
-import { joinHref } from "@/lib/site";
+import { bookHref, joinHref } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Youth Soccer Programs",
@@ -64,7 +64,7 @@ export default function ProgramsPage() {
               </Reveal>
               <Reveal delay={100} className="lg:col-span-6 lg:px-8">
                 <StatusBadge status={program.availability} />
-                {program.ages && <p className="eyebrow mt-6 text-gold">{program.ages}</p>}
+                {program.ages && <p className="eyebrow mt-6 text-accent">{program.ages}</p>}
                 <h2 className="mt-4 font-display text-6xl sm:text-7xl">{program.name}</h2>
                 <p className="mt-5 text-2xl text-chalk">{program.summary}</p>
                 <p className="mt-4 max-w-lg text-lg text-mist">{program.description}</p>
@@ -93,6 +93,20 @@ export default function ProgramsPage() {
           </article>
         ))}
       </section>
+
+      <Section tone="coal" className="py-20! sm:py-24!">
+        <Container className="grid gap-8 lg:grid-cols-12 lg:items-end">
+          <SectionHeading
+            eyebrow="Private sessions"
+            title="Book a private session."
+            intro="One player. Focused coaching. At Davis Park."
+            className="lg:col-span-8"
+          />
+          <ButtonLink href={bookHref} size="lg" className="lg:col-span-4 lg:justify-self-start">
+            Book a session
+          </ButtonLink>
+        </Container>
+      </Section>
 
       <JoinCta />
     </>

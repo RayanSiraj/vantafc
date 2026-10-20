@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { footerNav, joinHref, site } from "@/lib/site";
-import { Crest } from "./crest";
+import { CrestBadge } from "./crest";
 import { ButtonLink } from "./button";
 import { SocialLinks } from "./social-links";
 
@@ -10,7 +10,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1440px] px-5 pt-20 pb-10 sm:px-8 lg:px-12">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Crest className="h-16 w-auto text-chalk" />
+            <CrestBadge className="h-28 w-28" />
             <p className="mt-8 font-display text-5xl sm:text-6xl">Vanta FC</p>
             <p className="eyebrow mt-4 text-steel">{site.location.short}</p>
             <p className="mt-6 max-w-sm text-mist">Develop the player. Build the person. Love the game.</p>
@@ -26,7 +26,7 @@ export function SiteFooter() {
                 <ul className="space-y-3">
                   {group.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-chalk/90 transition-colors hover:text-gold">
+                      <Link href={link.href} className="text-chalk/90 transition-colors hover:text-accent">
                         {link.label}
                       </Link>
                     </li>

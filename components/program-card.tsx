@@ -28,7 +28,7 @@ export function ProgramCard({ program, index = 0, href }: ProgramCardProps) {
         <StatusBadge status={program.availability} />
       </div>
       <div className="relative">
-        {program.ages && <p className="eyebrow mb-3 text-gold">{program.ages}</p>}
+        {program.ages && <p className="eyebrow mb-3 text-accent">{program.ages}</p>}
         <h3 className="font-display text-4xl sm:text-5xl">{program.name}</h3>
         <p className="mt-4 max-w-sm text-mist">{program.summary}</p>
         <span className="eyebrow mt-6 inline-flex items-center gap-3 text-chalk">

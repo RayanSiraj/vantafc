@@ -19,13 +19,21 @@ export function HomeHero() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-transparent" />
       </div>
 
-      <Container>
+      <div
+        className="pointer-events-none absolute top-1/2 right-[-16rem] z-0 hidden size-[56rem] -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.06] lg:flex"
+        aria-hidden="true"
+      >
+        <span className="size-[42rem] rounded-full border border-white/[0.06]" />
+      </div>
+
+      <Container className="relative z-10">
         <p className="eyebrow animate-rise flex items-center gap-3 text-chalk/80">
-          <span className="h-px w-8 bg-gold" aria-hidden="true" />
+          <span className="h-px w-8 bg-accent" aria-hidden="true" />
+          <span className="size-1.5 rotate-45 bg-accent" aria-hidden="true" />
           {site.location.venue} • {site.location.region}
         </p>
         <h1 className="animate-rise mt-6 max-w-6xl font-display text-[clamp(3.6rem,13vw,11.5rem)] [animation-delay:100ms]">
-          Built for the next generation<span className="text-gold">.</span>
+          Built for the next generation<span className="text-accent">.</span>
         </h1>
         <div className="mt-8 grid gap-10 lg:mt-12 lg:grid-cols-12 lg:items-end">
           <p className="animate-rise max-w-xl text-lg leading-relaxed text-mist [animation-delay:220ms] sm:text-xl lg:col-span-6">

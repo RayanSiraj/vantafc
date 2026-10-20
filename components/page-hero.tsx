@@ -20,8 +20,9 @@ export function PageHero({ eyebrow, title, intro, image, children }: PageHeroPro
         </div>
       )}
       <Container>
-        <p className="eyebrow animate-rise mb-6 flex items-center gap-3 text-gold">
+        <p className="eyebrow animate-rise mb-6 flex items-center gap-3 text-accent">
           <span className="h-px w-8 bg-current" aria-hidden="true" />
+          <span className="size-1.5 rotate-45 bg-current" aria-hidden="true" />
           {eyebrow}
         </p>
         <h1 className="animate-rise font-display text-6xl text-balance [animation-delay:80ms] sm:text-7xl lg:text-[8.5rem]">{title}</h1>

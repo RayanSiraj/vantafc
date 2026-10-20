@@ -4,13 +4,13 @@ import { useId, useState, type FormEvent, type ReactNode } from "react";
 import { experienceOptions, programFormOptions } from "@/lib/content";
 import { requiredInterestFields, validateInterest, type InterestSubmission } from "@/lib/interest";
 import { Button } from "./button";
-import { Crest } from "./crest";
+import { CrestBadge } from "./crest";
 
 type Status = "idle" | "submitting" | "success" | "error";
 type Errors = Partial<Record<keyof InterestSubmission, string>>;
 
 const inputClass =
-  "block w-full rounded-none border-0 border-b border-white/20 bg-transparent px-0 py-3 text-lg text-chalk placeholder:text-steel/70 transition-colors focus:border-gold focus:ring-0 focus:outline-none aria-[invalid=true]:border-red-400";
+  "block w-full rounded-none border-0 border-b border-white/20 bg-transparent px-0 py-3 text-lg text-chalk placeholder:text-steel/70 transition-colors focus:border-accent focus:ring-0 focus:outline-none aria-[invalid=true]:border-red-400";
 
 function Field({
   id,
@@ -31,7 +31,7 @@ function Field({
     <div className={className}>
       <label htmlFor={id} className="eyebrow block text-steel">
         {label}
-        {required && <span className="text-gold"> *</span>}
+        {required && <span className="text-accent"> *</span>}
       </label>
       {children}
       {error && (
@@ -91,7 +91,7 @@ export function InterestForm({ defaultProgram = "" }: { defaultProgram?: string 
   if (status === "success") {
     return (
       <div role="status" className="flex flex-col items-start gap-6 border border-white/10 bg-char p-8 sm:p-12">
-        <Crest className="h-14 w-auto text-gold" title="" />
+        <CrestBadge className="h-14 w-14" title="" />
         <h3 className="font-display text-5xl sm:text-6xl">You&rsquo;re on the list.</h3>
         <p className="max-w-md text-lg text-mist">
           We&rsquo;ll be in touch with Vanta FC updates and upcoming opportunities.
@@ -139,7 +139,7 @@ export function InterestForm({ defaultProgram = "" }: { defaultProgram?: string 
 
       <div className="flex flex-col gap-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-steel">
-          <span className="text-gold">*</span> Required. We&rsquo;ll only use this to contact you about Vanta FC.
+          <span className="text-accent">*</span> Required. We&rsquo;ll only use this to contact you about Vanta FC.
         </p>
         <Button type="submit" size="lg" disabled={status === "submitting"} className="w-full sm:w-auto">
           {status === "submitting" ? "Sending…" : "Join the Vanta FC interest list"}
