@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Program } from "@/lib/content";
+import { bookServiceHref } from "@/lib/booking";
 import { StatusBadge } from "./status-badge";
 
 type ProgramCardProps = { program: Program; index?: number; href?: string };
 
 export function ProgramCard({ program, index = 0, href }: ProgramCardProps) {
-  const link = href ?? `/programs#${program.slug}`;
+  const link = program.bookable ? bookServiceHref(program.slug) : href ?? `/programs#${program.slug}`;
   const comingSoon = program.availability === "coming-soon";
   return (
     <Link
@@ -36,7 +37,7 @@ export function ProgramCard({ program, index = 0, href }: ProgramCardProps) {
         <h3 className="font-display text-4xl sm:text-5xl">{program.name}</h3>
         <p className="mt-4 max-w-sm text-mist">{program.summary}</p>
         <span className="eyebrow mt-6 inline-flex items-center gap-3 text-chalk">
-          Learn more
+          {program.bookable ? "Book now" : "Learn more"}
           <span className="h-px w-8 bg-chalk transition-all duration-500 ease-out-expo group-hover:w-14" aria-hidden="true" />
         </span>
       </div>

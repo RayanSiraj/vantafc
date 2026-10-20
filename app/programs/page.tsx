@@ -8,6 +8,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { StatusBadge } from "@/components/status-badge";
 import { programs } from "@/lib/content";
+import { bookServiceHref } from "@/lib/booking";
 import { pageMetadata } from "@/lib/seo";
 import { bookHref, joinHref } from "@/lib/site";
 
@@ -88,7 +89,7 @@ export default function ProgramsPage() {
                     : "Schedule, pricing, and registration dates will be announced. Join the interest list to hear first."}
                 </p>
                 <ButtonLink
-                  href={program.bookable ? bookHref : `${joinHref}?program=${encodeURIComponent(program.formValue)}`}
+                  href={program.bookable ? bookServiceHref(program.slug) : `${joinHref}?program=${encodeURIComponent(program.formValue)}`}
                   className="mt-6"
                   variant={program.bookable ? "primary" : "secondary"}
                 >
