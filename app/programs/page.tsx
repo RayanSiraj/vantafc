@@ -63,9 +63,13 @@ export default function ProgramsPage() {
                 <span className="absolute top-5 left-5 font-display text-5xl text-white/70">{String(i + 1).padStart(2, "0")}</span>
               </Reveal>
               <Reveal delay={100} className="lg:col-span-6 lg:px-8">
-                <StatusBadge status={program.availability} />
+                {program.bookable ? (
+                  <StatusBadge status="open" label="Booking open" />
+                ) : (
+                  <StatusBadge status={program.availability} />
+                )}
                 {program.ages && <p className="eyebrow mt-6 text-accent">{program.ages}</p>}
-                <h2 className="mt-4 font-display text-6xl sm:text-7xl">{program.name}</h2>
+                <h2 className="mt-4 font-display text-5xl sm:text-7xl">{program.name}</h2>
                 <p className="mt-5 text-2xl text-chalk">{program.summary}</p>
                 <p className="mt-4 max-w-lg text-lg text-mist">{program.description}</p>
                 {program.focus && (
