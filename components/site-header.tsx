@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { joinHref, mainNav, site } from "@/lib/site";
+import { bookHref, joinHref, mainNav, site } from "@/lib/site";
 import { Wordmark } from "./crest";
 import { buttonClasses } from "./button";
 
@@ -43,7 +43,7 @@ export function SiteHeader() {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-18 max-w-[1440px] items-center justify-between gap-6 px-5 sm:px-8 lg:h-20 lg:px-12">
+      <div className="mx-auto flex h-18 max-w-[1440px] items-center justify-between gap-2 px-5 sm:gap-6 sm:px-8 lg:h-20 lg:px-12">
         <Link href="/" aria-label={`${site.name} home`} onClick={() => setOpen(false)}>
           <Wordmark />
         </Link>
@@ -68,8 +68,15 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link href={joinHref} className={buttonClasses("primary", "md", "min-h-11! px-5! sm:min-h-12! sm:px-6!")}>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Link
+            href={joinHref}
+            className={buttonClasses(
+              "primary",
+              "md",
+              "min-h-11! whitespace-nowrap px-4! text-[0.65rem]! tracking-[0.14em]! sm:min-h-12! sm:px-6! sm:text-[0.72rem]! sm:tracking-[0.18em]!",
+            )}
+          >
             Join Vanta
           </Link>
           <button
@@ -113,7 +120,10 @@ export function SiteHeader() {
             ))}
           </ul>
           <div className="mt-10 space-y-4">
-            <Link href={joinHref} onClick={() => setOpen(false)} className={buttonClasses("primary", "lg", "w-full")}>
+            <Link href={bookHref} onClick={() => setOpen(false)} className={buttonClasses("primary", "lg", "w-full")}>
+              Book a session
+            </Link>
+            <Link href={joinHref} onClick={() => setOpen(false)} className={buttonClasses("secondary", "lg", "w-full")}>
               Join Vanta
             </Link>
             <p className="eyebrow text-center text-steel">{site.location.short}</p>

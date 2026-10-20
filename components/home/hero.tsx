@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ButtonLink } from "../button";
 import { Container } from "../container";
-import { joinHref, site } from "@/lib/site";
+import { bookHref, joinHref, site } from "@/lib/site";
 
 export function HomeHero() {
   return (
@@ -40,9 +41,22 @@ export function HomeHero() {
             Vanta FC is a youth soccer development organization built to help young players grow through
             purposeful training, competition, and a love for the game.
           </p>
-          <div className="animate-rise flex flex-col gap-4 [animation-delay:320ms] sm:flex-row lg:col-span-6 lg:justify-end">
-            <ButtonLink href={joinHref} size="lg">Join Vanta</ButtonLink>
-            <ButtonLink href="/programs" variant="secondary" size="lg">Explore programs</ButtonLink>
+          <div className="animate-rise [animation-delay:320ms] lg:col-span-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-end">
+              <ButtonLink href={joinHref} size="lg">Join Vanta</ButtonLink>
+              <ButtonLink href={bookHref} variant="secondary" size="lg">Book a session</ButtonLink>
+            </div>
+            <p className="mt-5 sm:text-right">
+              <Link
+                href="/programs"
+                className="group eyebrow inline-flex items-center gap-2 py-1.5 -my-1.5 text-chalk transition-colors hover:text-accent"
+              >
+                Explore programs
+                <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            </p>
           </div>
         </div>
       </Container>

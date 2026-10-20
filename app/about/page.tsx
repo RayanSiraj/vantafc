@@ -47,7 +47,7 @@ export default function AboutPage() {
       <section className="grid bg-chalk text-ink lg:grid-cols-2">
         <Reveal className="border-b border-ink/10 p-10 sm:p-16 lg:border-r lg:border-b-0 lg:p-24">
           <p className="eyebrow text-ink/50">Our mission</p>
-          <h2 className="mt-6 font-display text-5xl sm:text-6xl">
+          <h2 className="mt-6 font-display text-5xl max-[359px]:text-4xl sm:text-6xl">
             Develop skills, confidence, character, and a love for soccer.
           </h2>
           <p className="mt-6 max-w-md text-lg text-graphite">
@@ -57,7 +57,7 @@ export default function AboutPage() {
         </Reveal>
         <Reveal delay={100} className="p-10 sm:p-16 lg:p-24">
           <p className="eyebrow text-ink/50">Our vision</p>
-          <h2 className="mt-6 font-display text-5xl sm:text-6xl">A trusted home for the game in Northeast Florida.</h2>
+          <h2 className="mt-6 font-display text-5xl max-[359px]:text-4xl sm:text-6xl">A trusted home for the game in Northeast Florida.</h2>
           <p className="mt-6 max-w-md text-lg text-graphite">
             To build a soccer organization that becomes a trusted home for player development and competition in
             Northeast Florida.

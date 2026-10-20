@@ -34,9 +34,13 @@ export const site = {
 
 export type NavItem = { label: string; href: string };
 
+export const joinHref = "/join";
+export const bookHref = "/book";
+
 export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Programs", href: "/programs" },
+  { label: "Book", href: bookHref },
   { label: "Development", href: "/development" },
   { label: "About", href: "/about" },
   { label: "Events", href: "/events" },
@@ -64,6 +68,3 @@ export const footerNav: { heading: string; links: NavItem[] }[] = [
     ],
   },
 ];
-
-export const joinHref = "/join";
-export const bookHref = "/book";

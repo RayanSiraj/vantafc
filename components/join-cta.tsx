@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { joinHref } from "@/lib/site";
+import { bookHref, joinHref } from "@/lib/site";
 import { ButtonLink } from "./button";
 import { Container } from "./container";
 import { Reveal } from "./reveal";
@@ -27,8 +27,8 @@ export function JoinCta({
           <p className="mx-auto mt-6 max-w-xl text-lg text-graphite">{body}</p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <ButtonLink href={joinHref} variant="dark" size="lg">Join Vanta</ButtonLink>
-            <ButtonLink href="/programs" variant="secondary" size="lg" className="border-ink/30! text-ink! hover:bg-ink! hover:text-chalk!">
-              Explore programs
+            <ButtonLink href={bookHref} variant="secondary" size="lg" className="border-ink/30! text-ink! hover:bg-ink! hover:text-chalk!">
+              Book a session
             </ButtonLink>
           </div>
         </Reveal>
