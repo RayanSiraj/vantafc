@@ -80,12 +80,11 @@ export default async function BookPage({
             )}
             {embedUrl && linkUrl ? (
               <div>
-                <div className="border border-ink/10 bg-chalk p-3 sm:p-5">
+                <div className="-mx-5 border-0 bg-chalk p-0 sm:mx-0 sm:border sm:p-3 lg:p-5">
                   <iframe
                     title="Book a Vanta FC session"
                     src={embedUrl}
-                    className="block w-full border-0"
-                    style={{ height: 760 }}
+                    className="block h-[1000px] w-full border-0 sm:h-[760px]"
                     loading="lazy"
                   />
                 </div>
@@ -93,7 +92,7 @@ export default async function BookPage({
                   href={linkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block text-sm text-mist underline underline-offset-4 transition-colors hover:text-chalk"
+                  className="mt-1.5 inline-block min-h-8 py-1.5 -mb-1.5 text-sm text-mist underline underline-offset-4 transition-colors hover:text-chalk"
                 >
                   Trouble loading the calendar? Open the booking page
                 </a>
@@ -124,7 +123,7 @@ export default async function BookPage({
 
         <p className="mt-14 text-sm text-steel">
           Looking for group training?{" "}
-          <Link href="/programs" className="text-chalk underline underline-offset-4 transition-colors hover:text-accent">
+          <Link href="/programs" className="inline-block py-1.5 -my-1.5 text-chalk underline underline-offset-4 transition-colors hover:text-accent">
             See all programs →
           </Link>
         </p>

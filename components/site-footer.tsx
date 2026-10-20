@@ -26,7 +26,7 @@ export function SiteFooter() {
                 <ul className="space-y-3">
                   {group.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-chalk/90 transition-colors hover:text-accent">
+                      <Link href={link.href} className="inline-block py-1.5 -my-1.5 text-chalk/90 transition-colors hover:text-accent">
                         {link.label}
                       </Link>
                     </li>
@@ -49,10 +49,10 @@ export function SiteFooter() {
           <p>© {site.copyrightYear} Vanta FC. All rights reserved.</p>
           <ul className="flex gap-6">
             <li>
-              <Link href="/privacy" className="hover:text-chalk">Privacy Policy</Link>
+              <Link href="/privacy" className="inline-block py-1.5 -my-1.5 hover:text-chalk">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-chalk">Terms</Link>
+              <Link href="/terms" className="inline-block py-1.5 -my-1.5 hover:text-chalk">Terms</Link>
             </li>
           </ul>
         </div>

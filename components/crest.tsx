@@ -40,7 +40,7 @@ export function Wordmark({ className }: WordmarkProps) {
       <Crest className="h-9 w-auto shrink-0 text-accent" title="" />
       <span className="flex flex-col leading-none">
         <span className="font-display text-[1.65rem] tracking-[0.02em]">Vanta FC</span>
-        <span className="mt-1 text-[0.55rem] font-semibold tracking-[0.32em] text-steel uppercase">
+        <span className="mt-1 whitespace-nowrap text-[0.55rem] font-semibold tracking-[0.22em] text-steel uppercase sm:tracking-[0.32em] max-[359px]:hidden">
           St. Johns County
         </span>
       </span>
