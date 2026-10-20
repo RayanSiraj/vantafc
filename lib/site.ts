@@ -21,7 +21,7 @@ export const site = {
     embedSrc: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ39DEfBbVWMBzf4xeHjjDjpm5NoB-N8GE-yxL8c3dQQ5cwWSD3-502HVeoVTp632GX8JsF6a2V1" as string | null,
   },
   email: "vanta.futbol@gmail.com",
-  /** Interest-form submissions are emailed here via FormSubmit (formsubmit.co); the address must be activated once via FormSubmit's confirmation email. */
+  /** Interest-form submissions are posted from the browser to FormSubmit (formsubmit.co); the address must be activated once via FormSubmit's confirmation email. */
   forms: { notifyEmail: "vanta.futbol@gmail.com" },
   /** Add a URL to each network once the handle exists. `null` renders "Coming soon". */
   socials: [

@@ -1,3 +1,5 @@
+import { site } from "./site";
+
 export type InterestSubmission = {
   parentName: string;
   email: string;
@@ -8,6 +10,32 @@ export type InterestSubmission = {
   program: string;
   message: string;
 };
+
+export const formSubmitEndpoint = `https://formsubmit.co/ajax/${site.forms.notifyEmail}`;
+
+export function buildInterestEmail(data: InterestSubmission, submittedAt: string) {
+  return {
+    _subject: `New Vanta FC interest: ${data.playerName} (${data.program || "Program not specified"})`,
+    _template: "table",
+    _captcha: "false",
+    _replyto: data.email,
+    "Parent/Guardian": data.parentName,
+    Email: data.email,
+    Phone: data.phone || "—",
+    "Player name": data.playerName,
+    "Player age": data.playerAge,
+    "Soccer experience": data.experience || "—",
+    Program: data.program || "—",
+    Message: data.message || "—",
+    "Submitted at": submittedAt,
+  };
+}
+
+export function isFormSubmitSuccess(json: unknown): boolean {
+  if (json === null || typeof json !== "object" || Array.isArray(json)) return false;
+  const success = (json as { success?: unknown }).success;
+  return success === "true" || success === true;
+}
 
 export const interestFields: (keyof InterestSubmission)[] = [
   "parentName",
