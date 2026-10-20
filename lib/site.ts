@@ -20,8 +20,9 @@ export const site = {
     url: "https://calendar.app.google/v15xCR4KMLDAbnB76" as string | null,
     embedSrc: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ39DEfBbVWMBzf4xeHjjDjpm5NoB-N8GE-yxL8c3dQQ5cwWSD3-502HVeoVTp632GX8JsF6a2V1" as string | null,
   },
-  /** Set to a real address once it is live. `null` renders "Email coming soon". */
-  email: null as string | null,
+  email: "vanta.futbol@gmail.com",
+  /** Interest-form submissions are emailed here via FormSubmit (formsubmit.co); the address must be activated once via FormSubmit's confirmation email. */
+  forms: { notifyEmail: "vanta.futbol@gmail.com" },
   /** Add a URL to each network once the handle exists. `null` renders "Coming soon". */
   socials: [
     { label: "Instagram", href: null as string | null },
