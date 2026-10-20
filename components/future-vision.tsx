@@ -10,8 +10,9 @@ export function FutureVision() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink via-ink/80 to-ink" aria-hidden="true" />
       <Container>
         <Reveal className="max-w-5xl">
-          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+          <p className="eyebrow mb-6 flex items-center gap-3 text-accent">
             <span className="h-px w-8 bg-current" aria-hidden="true" />
+            <span className="size-1.5 rotate-45 bg-current" aria-hidden="true" />
             The vision
           </p>
           <h2 id="future-title" className="font-display text-[clamp(3.5rem,11vw,10rem)]">

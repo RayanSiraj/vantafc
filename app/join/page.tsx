@@ -17,8 +17,9 @@ export default async function JoinPage({ searchParams }: { searchParams: Promise
     <Section className="pt-36! sm:pt-44!">
       <Container className="grid gap-14 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
-          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+          <p className="eyebrow mb-6 flex items-center gap-3 text-accent">
             <span className="h-px w-8 bg-current" aria-hidden="true" />
+            <span className="size-1.5 rotate-45 bg-current" aria-hidden="true" />
             Join Vanta
           </p>
           <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl">Ready to join Vanta?</h1>
@@ -26,9 +27,9 @@ export default async function JoinPage({ searchParams }: { searchParams: Promise
             Be the first to know about programs, registration, clinics, camps, and upcoming Vanta FC opportunities.
           </p>
           <ul className="mt-10 space-y-4 border-t border-white/10 pt-8 text-mist">
-            <li className="flex gap-4"><span className="text-gold">01</span> Join the interest list.</li>
-            <li className="flex gap-4"><span className="text-gold">02</span> Get program details and dates first.</li>
-            <li className="flex gap-4"><span className="text-gold">03</span> Register when programs open.</li>
+            <li className="flex gap-4"><span className="text-accent">01</span> Join the interest list.</li>
+            <li className="flex gap-4"><span className="text-accent">02</span> Get program details and dates first.</li>
+            <li className="flex gap-4"><span className="text-accent">03</span> Register when programs open.</li>
           </ul>
           <p className="eyebrow mt-10 text-steel">{site.location.short}</p>
         </Reveal>

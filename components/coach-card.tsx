@@ -19,7 +19,7 @@ export function CoachCard({ coach, role, blurb }: CoachCardProps) {
         )}
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <p className="eyebrow text-gold">{role}</p>
+        <p className="eyebrow text-accent">{role}</p>
         <h3 className="mt-3 font-display text-3xl">{coach?.name ?? "To be announced"}</h3>
         <p className="mt-3 text-sm leading-relaxed text-mist">{coach?.bio ?? blurb}</p>
         {coach?.credentials && coach.credentials.length > 0 && (

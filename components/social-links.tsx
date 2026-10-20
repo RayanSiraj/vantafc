@@ -6,7 +6,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
       {site.socials.map((s) => (
         <li key={s.label}>
           {s.href ? (
-            <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-chalk/90 transition-colors hover:text-gold">
+            <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-chalk/90 transition-colors hover:text-accent">
               {s.label}
             </a>
           ) : (

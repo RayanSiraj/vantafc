@@ -28,7 +28,7 @@ export const organizationJsonLd = {
   alternateName: site.shortName,
   sport: "Soccer",
   url: site.url,
-  logo: `${site.url}/icon.svg`,
+  logo: `${site.url}/brand/vanta-fc-crest.png`,
   description: site.description,
   location: {
     "@type": "Place",

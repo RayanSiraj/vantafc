@@ -2,7 +2,7 @@ import Image from "next/image";
 import { site } from "@/lib/site";
 import { ButtonLink } from "./button";
 import { Container, Section } from "./container";
-import { Crest } from "./crest";
+import { CrestBadge } from "./crest";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
 
@@ -48,10 +48,10 @@ export function DavisPark() {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="absolute h-56 w-56 animate-ping rounded-full border border-gold/30 [animation-duration:3s]" aria-hidden="true" />
-            <span className="absolute h-32 w-32 rounded-full border border-gold/50" aria-hidden="true" />
+            <span className="absolute h-56 w-56 animate-ping rounded-full border border-accent/30 [animation-duration:3s]" aria-hidden="true" />
+            <span className="absolute h-32 w-32 rounded-full border border-accent/50" aria-hidden="true" />
             <div className="relative flex flex-col items-center gap-3 bg-ink/80 px-6 py-5 text-center backdrop-blur">
-              <Crest className="h-12 w-auto text-chalk" title="" />
+              <CrestBadge className="h-12 w-12" title="" />
               <p className="font-display text-2xl">Davis Park</p>
               <p className="eyebrow text-steel">Home of Vanta FC</p>
             </div>

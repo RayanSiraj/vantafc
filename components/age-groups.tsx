@@ -18,7 +18,7 @@ export function AgeGroups() {
               as="li"
               key={g.ages}
               delay={i * 90}
-              className="group flex min-h-96 flex-col justify-between border border-white/10 bg-ink p-8 transition-colors duration-500 hover:border-gold/60"
+              className="group flex min-h-96 flex-col justify-between border border-white/10 bg-ink p-8 transition-colors duration-500 hover:border-accent/60"
             >
               <div>
                 <p className="eyebrow text-steel">Ages</p>
@@ -26,7 +26,7 @@ export function AgeGroups() {
               </div>
               <div>
                 <div className="mb-6 h-1 w-full bg-white/10">
-                  <div className="h-full bg-gold transition-all duration-700" style={{ width: `${((i + 1) / ageGroups.length) * 100}%` }} />
+                  <div className="h-full bg-accent transition-all duration-700" style={{ width: `${((i + 1) / ageGroups.length) * 100}%` }} />
                 </div>
                 <h3 className="font-display text-4xl">{g.stage}</h3>
                 <p className="mt-3 text-mist">{g.description}</p>

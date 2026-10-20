@@ -40,7 +40,7 @@ export default function EventsPage() {
             </div>
           ) : (
             <Reveal className="border border-white/10 bg-ink p-8 sm:p-14 lg:p-20">
-              <p className="eyebrow text-gold">Nothing announced yet</p>
+              <p className="eyebrow text-accent">Nothing announced yet</p>
               <h2 className="mt-6 max-w-4xl font-display text-5xl sm:text-7xl">Vanta FC events are coming soon.</h2>
               <p className="mt-6 max-w-xl text-lg text-mist">
                 Join the interest list and you&rsquo;ll be the first to know when dates are announced.

@@ -25,8 +25,9 @@ export function SectionHeading({
   return (
     <Reveal className={`${center ? "mx-auto text-center" : ""} max-w-4xl ${className}`}>
       {eyebrow && (
-        <p className={`eyebrow mb-5 flex items-center gap-3 ${center ? "justify-center" : ""} ${tone === "dark" ? "text-gold" : "text-ink/60"}`}>
+        <p className={`eyebrow mb-5 flex items-center gap-3 ${center ? "justify-center" : ""} ${tone === "dark" ? "text-accent" : "text-ink/60"}`}>
           <span className="h-px w-8 bg-current" aria-hidden="true" />
+          <span className="size-1.5 rotate-45 bg-current" aria-hidden="true" />
           {eyebrow}
         </p>
       )}

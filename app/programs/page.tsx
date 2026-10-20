@@ -64,7 +64,7 @@ export default function ProgramsPage() {
               </Reveal>
               <Reveal delay={100} className="lg:col-span-6 lg:px-8">
                 <StatusBadge status={program.availability} />
-                {program.ages && <p className="eyebrow mt-6 text-gold">{program.ages}</p>}
+                {program.ages && <p className="eyebrow mt-6 text-accent">{program.ages}</p>}
                 <h2 className="mt-4 font-display text-6xl sm:text-7xl">{program.name}</h2>
                 <p className="mt-5 text-2xl text-chalk">{program.summary}</p>
                 <p className="mt-4 max-w-lg text-lg text-mist">{program.description}</p>

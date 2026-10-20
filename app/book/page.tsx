@@ -21,8 +21,9 @@ export default function BookPage() {
       <Container>
         <div className="grid gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+            <p className="eyebrow mb-6 flex items-center gap-3 text-accent">
               <span className="h-px w-8 bg-current" aria-hidden="true" />
+              <span className="size-1.5 rotate-45 bg-current" aria-hidden="true" />
               Private sessions
             </p>
             <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl">Book a private session.</h1>
@@ -30,9 +31,9 @@ export default function BookPage() {
               Focused, one-on-one work on the details that move a player forward.
             </p>
             <ul className="mt-10 space-y-4 border-t border-white/10 pt-8 text-mist">
-              <li className="flex gap-4"><span className="text-gold">01</span> Pick a time that works.</li>
-              <li className="flex gap-4"><span className="text-gold">02</span> Confirm your details.</li>
-              <li className="flex gap-4"><span className="text-gold">03</span> Meet us at Davis Park.</li>
+              <li className="flex gap-4"><span className="text-accent">01</span> Pick a time that works.</li>
+              <li className="flex gap-4"><span className="text-accent">02</span> Confirm your details.</li>
+              <li className="flex gap-4"><span className="text-accent">03</span> Meet us at Davis Park.</li>
             </ul>
             <p className="eyebrow mt-10 text-steel">{site.location.short}</p>
           </Reveal>
@@ -84,7 +85,7 @@ export default function BookPage() {
 
         <p className="mt-14 text-sm text-steel">
           Looking for group training?{" "}
-          <Link href="/programs" className="text-chalk underline underline-offset-4 transition-colors hover:text-gold">
+          <Link href="/programs" className="text-chalk underline underline-offset-4 transition-colors hover:text-accent">
             See all programs →
           </Link>
         </p>

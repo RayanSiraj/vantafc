@@ -16,7 +16,7 @@ export function Pathway() {
           intro="A player can grow with Vanta FC over years, not weeks. Every stage builds on the last."
         />
         <ol className="relative mt-20 grid gap-0 lg:mt-28 lg:grid-cols-4">
-          <div aria-hidden="true" className="absolute top-[2.15rem] right-0 left-0 hidden h-px bg-gradient-to-r from-white/40 via-gold to-white/10 lg:block" />
+          <div aria-hidden="true" className="absolute top-[2.15rem] right-0 left-0 hidden h-px bg-gradient-to-r from-white/40 via-accent to-white/10 lg:block" />
           {pathway.map((p, i) => (
             <Reveal
               as="li"
@@ -26,12 +26,12 @@ export function Pathway() {
             >
               <span
                 aria-hidden="true"
-                className="absolute top-6 -left-[0.4rem] flex h-3 w-3 rotate-45 border border-gold bg-ink lg:static lg:mb-0 lg:ml-0"
+                className="absolute top-6 -left-[0.4rem] flex h-3 w-3 rotate-45 border border-accent bg-ink lg:static lg:mb-0 lg:ml-0"
               />
               <p className="eyebrow mt-0 text-steel lg:mt-8">Stage 0{i + 1}</p>
               <h3 className="mt-3 flex items-center gap-4 font-display text-6xl sm:text-7xl">
                 {p.step}
-                {i < pathway.length - 1 && <span aria-hidden="true" className="hidden text-4xl text-gold lg:inline">→</span>}
+                {i < pathway.length - 1 && <span aria-hidden="true" className="hidden text-4xl text-accent lg:inline">→</span>}
               </h3>
               <p className="mt-4 max-w-xs text-lg text-mist">{p.body}</p>
             </Reveal>
