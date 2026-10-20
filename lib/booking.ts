@@ -5,7 +5,7 @@ type PrivateBooking = {
   linkUrl: string | null;
 };
 
-export function getPrivateBooking(url: string | null = site.booking.privateSessionsUrl): PrivateBooking {
+export function parseBookingUrl(url: string | null): PrivateBooking {
   if (!url?.trim()) return { embedUrl: null, linkUrl: null };
 
   const iframeSrc = url.trim().match(/<iframe\b[^>]*\bsrc\s*=\s*(["'])(.*?)\1/i);
@@ -31,4 +31,14 @@ export function getPrivateBooking(url: string | null = site.booking.privateSessi
 
   parsedUrl.searchParams.set("gv", "true");
   return { embedUrl: parsedUrl.toString(), linkUrl };
+}
+
+export function getBooking(): PrivateBooking {
+  const embedBooking = parseBookingUrl(site.booking.embedSrc);
+  const publicBooking = parseBookingUrl(site.booking.url);
+
+  return {
+    embedUrl: embedBooking.embedUrl,
+    linkUrl: publicBooking.linkUrl ?? embedBooking.linkUrl,
+  };
 }
