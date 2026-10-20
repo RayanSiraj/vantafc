@@ -8,6 +8,7 @@ export type Program = {
   description: string;
   focus?: string[];
   bookable?: boolean;
+  bookingLabel?: string;
   availability: Availability;
   image: ImageRef;
   /** Value sent with the interest form so families can pick this program. */
@@ -24,6 +25,7 @@ export const programs: Program[] = [
       "Structured sessions built around technical development, confidence, decision-making, and enjoyment of the game.",
     focus: ["Technical development", "Confidence", "Decision-making", "Enjoyment"],
     bookable: true,
+    bookingLabel: "Development Program",
     availability: "interest",
     image: {
       src: "/images/youth-match.jpg",
@@ -39,6 +41,7 @@ export const programs: Program[] = [
       "More individualized development with additional repetition and focused coaching in a smaller group.",
     focus: ["Ball mastery", "First touch", "1v1", "Passing", "Finishing", "Decision-making"],
     bookable: true,
+    bookingLabel: "Small Group",
     availability: "interest",
     image: {
       src: "/images/ball-control.jpg",
@@ -53,6 +56,7 @@ export const programs: Program[] = [
     description: "Focused training sessions built around a specific skill.",
     focus: ["Finishing", "Dribbling", "First touch", "1v1", "Passing", "Speed & agility"],
     bookable: true,
+    bookingLabel: "Clinics",
     availability: "interest",
     image: {
       src: "/images/strike-closeup.jpg",

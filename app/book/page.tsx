@@ -3,9 +3,8 @@ import { ButtonLink } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { Reveal } from "@/components/reveal";
 import { StatusBadge } from "@/components/status-badge";
-import { programs } from "@/lib/content";
 import { bookHref, joinHref, site } from "@/lib/site";
-import { getBooking } from "@/lib/booking";
+import { bookingServices, bookServiceHref, getBooking } from "@/lib/booking";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -15,7 +14,13 @@ export const metadata = pageMetadata({
   path: bookHref,
 });
 
-export default function BookPage() {
+export default async function BookPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string | string[] }>;
+}) {
+  const { service } = await searchParams;
+  const selected = typeof service === "string" ? bookingServices.find((item) => item.slug === service) : undefined;
   const { embedUrl, linkUrl } = getBooking();
 
   return (
@@ -28,18 +33,33 @@ export default function BookPage() {
               <span className="size-1.5 rotate-45 bg-current" aria-hidden="true" />
               Book a session
             </p>
-            <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl">Book your session.</h1>
+            <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl">
+              {selected ? `Book ${selected.name}.` : "Book your session."}
+            </h1>
             <p className="mt-8 max-w-md text-lg leading-relaxed text-mist">
               One calendar for every Vanta FC service. Pick a time and tell us which service you&rsquo;re booking.
             </p>
             <p className="eyebrow mt-8 text-steel">Services</p>
             <ul className="mt-4 flex flex-wrap gap-2">
-              {programs.filter((program) => program.bookable).map((program) => (
-                <li key={program.slug} className="border border-white/15 px-3 py-2 text-sm text-chalk">
-                  {program.name}
-                </li>
-              ))}
-              <li className="border border-white/15 px-3 py-2 text-sm text-chalk">Private Session</li>
+              {bookingServices.map((item) => {
+                const isSelected = selected?.slug === item.slug;
+                return (
+                  <li key={item.slug}>
+                    <Link
+                      href={bookServiceHref(item.slug)}
+                      scroll={false}
+                      aria-current={isSelected ? "true" : undefined}
+                      className={`inline-flex items-center border px-3 py-2 text-sm transition-colors ${
+                        isSelected
+                          ? "border-accent text-accent"
+                          : "border-white/15 text-chalk hover:border-accent hover:text-accent"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
             <ul className="mt-10 space-y-4 border-t border-white/10 pt-8 text-mist">
               <li className="flex gap-4"><span className="text-accent">01</span> Pick a time that works.</li>
@@ -50,6 +70,14 @@ export default function BookPage() {
           </Reveal>
 
           <Reveal delay={120} className="lg:col-span-7">
+            {selected && (
+              <div className="mb-4 border border-white/10 bg-char p-4 sm:p-5">
+                <p className="eyebrow text-accent">Booking: {selected.name}</p>
+                <p className="mt-2 text-sm leading-relaxed text-mist">
+                  Pick a time, then enter &ldquo;{selected.bookingLabel}&rdquo; in the Service field.
+                </p>
+              </div>
+            )}
             {embedUrl && linkUrl ? (
               <div>
                 <div className="border border-ink/10 bg-chalk p-3 sm:p-5">

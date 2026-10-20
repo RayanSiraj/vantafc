@@ -1,9 +1,25 @@
-import { site } from "./site";
+import { programs } from "./content/programs";
+import { bookHref, site } from "./site";
 
 type PrivateBooking = {
   embedUrl: string | null;
   linkUrl: string | null;
 };
+
+export type BookingService = { slug: string; name: string; bookingLabel: string };
+
+export const bookingServices: BookingService[] = [
+  ...programs
+    .filter((program) => program.bookable)
+    .map((program) => ({
+      slug: program.slug,
+      name: program.name,
+      bookingLabel: program.bookingLabel ?? program.name,
+    })),
+  { slug: "private", name: "Private Session", bookingLabel: "Private Session" },
+];
+
+export const bookServiceHref = (slug: string) => `${bookHref}?service=${slug}`;
 
 export function parseBookingUrl(url: string | null): PrivateBooking {
   if (!url?.trim()) return { embedUrl: null, linkUrl: null };
