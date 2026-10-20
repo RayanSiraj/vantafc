@@ -2,7 +2,14 @@
 
 import { useId, useState, type FormEvent, type ReactNode } from "react";
 import { experienceOptions, programFormOptions } from "@/lib/content";
-import { requiredInterestFields, validateInterest, type InterestSubmission } from "@/lib/interest";
+import {
+  buildInterestEmail,
+  formSubmitEndpoint,
+  isFormSubmitSuccess,
+  requiredInterestFields,
+  validateInterest,
+  type InterestSubmission,
+} from "@/lib/interest";
 import { Button } from "./button";
 import { CrestBadge } from "./crest";
 
@@ -81,6 +88,22 @@ export function InterestForm({ defaultProgram = "" }: { defaultProgram?: string 
         if (json.errors) setErrors(json.errors);
         throw new Error(json.error ?? "Something went wrong. Please try again.");
       }
+
+      let emailResponse: Response;
+      try {
+        emailResponse = await fetch(formSubmitEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(buildInterestEmail(data, new Date().toISOString())),
+        });
+      } catch {
+        throw new Error("Something went wrong. Please try again.");
+      }
+      const emailJson = await emailResponse.json().catch(() => null);
+      if (!emailResponse.ok || !isFormSubmitSuccess(emailJson)) {
+        throw new Error("Something went wrong. Please try again.");
+      }
+
       setStatus("success");
     } catch (err) {
       setMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
