@@ -25,7 +25,11 @@ export function ProgramCard({ program, index = 0, href }: ProgramCardProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/10" aria-hidden="true" />
       <div className="relative flex items-start justify-between gap-4">
         <span className="font-display text-2xl text-white/40">{String(index + 1).padStart(2, "0")}</span>
-        <StatusBadge status={program.availability} />
+        {program.bookable ? (
+          <StatusBadge status="open" label="Booking open" />
+        ) : (
+          <StatusBadge status={program.availability} />
+        )}
       </div>
       <div className="relative">
         {program.ages && <p className="eyebrow mb-3 text-accent">{program.ages}</p>}

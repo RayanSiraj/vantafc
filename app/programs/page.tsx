@@ -14,7 +14,7 @@ import { bookHref, joinHref } from "@/lib/site";
 export const metadata = pageMetadata({
   title: "Youth Soccer Programs",
   description:
-    "Vanta FC youth soccer programs at Davis Park, St. Johns County: development sessions for ages 5–12, small-group training, and skill clinics. Camps, 3v3, and teams coming soon.",
+    "Book Vanta FC youth soccer programs at Davis Park, St. Johns County: development sessions for ages 5–12, small-group training, skill clinics, and private sessions. Camps, 3v3, and teams coming soon.",
   path: "/programs",
   image: "/images/youth-match.jpg",
 });
@@ -28,7 +28,7 @@ export default function ProgramsPage() {
         intro="Vanta FC starts with focused development for players ages 5–12 at Davis Park. More programs will follow as the club grows."
         image={{ src: "/images/one-v-one.jpg", alt: "Two young players competing for the ball" }}
       >
-        <ButtonLink href={joinHref} size="lg">Register interest</ButtonLink>
+        <ButtonLink href={bookHref} size="lg">Book a session</ButtonLink>
       </PageHero>
 
       <Section tone="coal">
@@ -63,9 +63,13 @@ export default function ProgramsPage() {
                 <span className="absolute top-5 left-5 font-display text-5xl text-white/70">{String(i + 1).padStart(2, "0")}</span>
               </Reveal>
               <Reveal delay={100} className="lg:col-span-6 lg:px-8">
-                <StatusBadge status={program.availability} />
+                {program.bookable ? (
+                  <StatusBadge status="open" label="Booking open" />
+                ) : (
+                  <StatusBadge status={program.availability} />
+                )}
                 {program.ages && <p className="eyebrow mt-6 text-accent">{program.ages}</p>}
-                <h2 className="mt-4 font-display text-6xl sm:text-7xl">{program.name}</h2>
+                <h2 className="mt-4 font-display text-5xl sm:text-7xl">{program.name}</h2>
                 <p className="mt-5 text-2xl text-chalk">{program.summary}</p>
                 <p className="mt-4 max-w-lg text-lg text-mist">{program.description}</p>
                 {program.focus && (
@@ -79,14 +83,16 @@ export default function ProgramsPage() {
                   </>
                 )}
                 <p className="mt-8 text-sm text-steel">
-                  Schedule, pricing, and registration dates will be announced. Join the interest list to hear first.
+                  {program.bookable
+                    ? "Book through our session calendar. Choose this service when you book."
+                    : "Schedule, pricing, and registration dates will be announced. Join the interest list to hear first."}
                 </p>
                 <ButtonLink
-                  href={`${joinHref}?program=${encodeURIComponent(program.formValue)}`}
+                  href={program.bookable ? bookHref : `${joinHref}?program=${encodeURIComponent(program.formValue)}`}
                   className="mt-6"
-                  variant={program.availability === "coming-soon" ? "secondary" : "primary"}
+                  variant={program.bookable ? "primary" : "secondary"}
                 >
-                  {program.availability === "coming-soon" ? "Join the waitlist" : "Register interest"}
+                  {program.bookable ? "Book a session" : "Join the waitlist"}
                 </ButtonLink>
               </Reveal>
             </Container>
@@ -97,9 +103,9 @@ export default function ProgramsPage() {
       <Section tone="coal" className="py-20! sm:py-24!">
         <Container className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeading
-            eyebrow="Private sessions"
-            title="Book a private session."
-            intro="One player. Focused coaching. At Davis Park."
+            eyebrow="Book a session"
+            title="One calendar. Every service."
+            intro="Development, small-group, clinics, and private sessions at Davis Park."
             className="lg:col-span-8"
           />
           <ButtonLink href={bookHref} size="lg" className="lg:col-span-4 lg:justify-self-start">
