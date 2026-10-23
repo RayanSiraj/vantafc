@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { ButtonLink } from "./button";
 import { Container, Section } from "./container";
 import { CrestBadge } from "./crest";
+import { Mark } from "./mark";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
 
@@ -13,7 +14,7 @@ export function DavisPark() {
         <div>
           <SectionHeading
             eyebrow="Home base"
-            title={<span id="home-field-title">Find your home field.</span>}
+            title={<span id="home-field-title">Find your <Mark>home field</Mark>.</span>}
             intro={
               <>
                 <p>

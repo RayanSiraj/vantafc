@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container, Section } from "../container";
+import { Mark } from "../mark";
 import { Reveal } from "../reveal";
 
 const verbs = ["Think", "Compete", "Create", "Improve", "Work together"];
@@ -16,7 +17,7 @@ export function Intro() {
               Who we are
             </p>
             <h2 id="intro-title" className="font-display text-6xl sm:text-7xl lg:text-8xl">
-              More than a place to play.
+              More than a place <Mark>to play</Mark>.
             </h2>
           </Reveal>
           <Reveal delay={100} className="mt-10 max-w-xl space-y-5 text-lg leading-relaxed text-mist">

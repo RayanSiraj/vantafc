@@ -14,7 +14,7 @@ import { VantaStandard } from "@/components/vanta-standard";
 export const metadata: Metadata = {
   title: { absolute: "Vanta FC | Youth Soccer in St. Johns County & Jacksonville" },
   description:
-    "Vanta FC is a new youth soccer development organization at Davis Park in St. Johns County, FL. Purposeful training for ages 5–12 near Jacksonville, Nocatee, and Ponte Vedra.",
+    "Vanta FC is a new youth soccer development organization at Davis Park in St. Johns County, FL. Purposeful training for ages 4–12 near Jacksonville, Nocatee, and Ponte Vedra.",
   alternates: { canonical: "/" },
 };
 

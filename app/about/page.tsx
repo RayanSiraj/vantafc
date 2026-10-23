@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { FutureVision } from "@/components/future-vision";
 import { JoinCta } from "@/components/join-cta";
+import { Mark } from "@/components/mark";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -22,14 +23,14 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Vanta FC"
-        title="We’re building something."
+        title={<>We’re <Mark>building something</Mark>.</>}
         intro="A new youth soccer organization in St. Johns County, with serious standards and a long-term vision."
         image={{ src: "/images/park-field.jpg", alt: "An open soccer field framed by trees" }}
       />
 
       <Section labelledBy="story-title">
         <Container className="grid gap-14 lg:grid-cols-12">
-          <SectionHeading className="lg:col-span-5" eyebrow="Our story" title={<span id="story-title">Why Vanta exists.</span>} />
+          <SectionHeading className="lg:col-span-5" eyebrow="Our story" title={<span id="story-title">Why Vanta <Mark>exists</Mark>.</span>} />
           <Reveal delay={100} className="space-y-6 text-xl leading-relaxed text-mist lg:col-span-7">
             <p>
               Young players deserve more than a place to play. They deserve an environment where they can develop,
@@ -48,7 +49,7 @@ export default function AboutPage() {
         <Reveal className="border-b border-ink/10 p-10 sm:p-16 lg:border-r lg:border-b-0 lg:p-24">
           <p className="eyebrow text-ink/50">Our mission</p>
           <h2 className="mt-6 font-display text-5xl max-[359px]:text-4xl sm:text-6xl">
-            Develop skills, confidence, character, and a love for soccer.
+            Develop skills, confidence, character, and a <Mark>love for soccer</Mark>.
           </h2>
           <p className="mt-6 max-w-md text-lg text-graphite">
             To create an environment where young players develop their skills, confidence, character, and love for
@@ -57,7 +58,7 @@ export default function AboutPage() {
         </Reveal>
         <Reveal delay={100} className="p-10 sm:p-16 lg:p-24">
           <p className="eyebrow text-ink/50">Our vision</p>
-          <h2 className="mt-6 font-display text-5xl max-[359px]:text-4xl sm:text-6xl">A trusted home for the game in Northeast Florida.</h2>
+          <h2 className="mt-6 font-display text-5xl max-[359px]:text-4xl sm:text-6xl">A <Mark>trusted home</Mark> for the game in Northeast Florida.</h2>
           <p className="mt-6 max-w-md text-lg text-graphite">
             To build a soccer organization that becomes a trusted home for player development and competition in
             Northeast Florida.
@@ -67,7 +68,7 @@ export default function AboutPage() {
 
       <Section tone="coal" labelledBy="values-title">
         <Container>
-          <SectionHeading eyebrow="Our values" title={<span id="values-title">What we stand for.</span>} />
+          <SectionHeading eyebrow="Our values" title={<span id="values-title">What we <Mark>stand for</Mark>.</span>} />
           <ul className="mt-16 grid border-t border-l border-white/10 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
               <Reveal as="li" key={v.title} delay={(i % 4) * 80} className="border-r border-b border-white/10 p-8">

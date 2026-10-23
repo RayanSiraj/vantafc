@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/button";
 import { Container, Section } from "@/components/container";
+import { Mark } from "@/components/mark";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { SocialLinks } from "@/components/social-links";
@@ -15,7 +16,7 @@ export const metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Get in touch." intro="Questions about Vanta FC? We'd like to hear from you." />
+      <PageHero eyebrow="Contact" title={<>Get in <Mark>touch</Mark>.</>} intro="Questions about Vanta FC? We'd like to hear from you." />
       <Section tone="coal" className="pt-16! sm:pt-20!">
         <Container className="grid gap-4 lg:grid-cols-3">
           <Reveal className="border border-white/10 bg-ink p-8 sm:p-10">

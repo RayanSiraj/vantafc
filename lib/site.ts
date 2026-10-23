@@ -3,7 +3,7 @@ export const site = {
   shortName: "VFC",
   tagline: "Built for the next generation.",
   description:
-    "Vanta FC is a youth soccer development organization at Davis Park in St. Johns County, Florida, serving players ages 5–12 from Jacksonville, Nocatee, and Ponte Vedra.",
+    "Vanta FC is a youth soccer development organization at Davis Park in St. Johns County, Florida, serving players ages 4–12 from Jacksonville, Nocatee, and Ponte Vedra.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vantafc.com",
   location: {
     venue: "Davis Park",
@@ -31,6 +31,12 @@ export const site = {
   ],
   copyrightYear: 2026,
 };
+
+export const sessionDetails = {
+  price: "$25",
+  priceLabel: "$25 per session",
+  duration: "1 hr 15 min",
+} as const;
 
 export type NavItem = { label: string; href: string };
 

@@ -1,10 +1,12 @@
-export type Faq = { question: string; answer: string };
+import { sessionDetails } from "../site";
+
+export type Faq = { question: string; answer: string; includeInStructuredData?: boolean };
 
 export const faqs: Faq[] = [
   {
     question: "What ages does Vanta FC serve?",
     answer:
-      "Vanta FC is initially focused on players ages 5–12, with additional age groups planned as the organization grows.",
+      "Vanta FC is initially focused on players ages 4–12, with additional age groups planned as the organization grows.",
   },
   {
     question: "Where is Vanta FC located?",
@@ -32,7 +34,7 @@ export const faqs: Faq[] = [
   },
   {
     question: "How much do programs cost?",
-    answer:
-      "Pricing and schedules haven't been announced yet. Join the interest list and you'll be among the first to receive details.",
+    answer: `Bookable sessions (Vanta Development, Small-Group Training, Vanta Clinics and Private Sessions) are ${sessionDetails.priceLabel}, and each session is ${sessionDetails.duration.replace(/\bhr\b/, "hour").replace(/\bmin\b/, "minutes")}. Pricing for camps, 3v3 and teams will be announced when those programs open.`,
+    includeInStructuredData: false,
   },
 ];

@@ -10,7 +10,7 @@ export function AgeGroups() {
         <SectionHeading
           eyebrow="Age groups"
           title={<span id="ages-title">Every age. The right challenge.</span>}
-          intro="Our initial focus is players ages 5–12. Groups below are a framework and will be finalized as programs launch."
+          intro="Our initial focus is players ages 4–12. Groups below are a framework and will be finalized as programs launch."
         />
         <ol className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {ageGroups.map((g, i) => (

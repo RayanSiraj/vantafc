@@ -1,14 +1,16 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { bookHref, joinHref } from "@/lib/site";
 import { ButtonLink } from "./button";
 import { Container } from "./container";
+import { Mark } from "./mark";
 import { Reveal } from "./reveal";
 
 export function JoinCta({
-  title = "Ready to join Vanta?",
+  title = <>Ready to <Mark>join Vanta</Mark>?</>,
   body = "Be the first to know about programs, registration, clinics, camps, and upcoming Vanta FC opportunities.",
 }: {
-  title?: string;
+  title?: ReactNode;
   body?: string;
 }) {
   return (

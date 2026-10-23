@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { JoinCta } from "@/components/join-cta";
 import { PageHero } from "@/components/page-hero";
+import { Mark } from "@/components/mark";
 import { ProgramCard } from "@/components/program-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -10,12 +11,12 @@ import { StatusBadge } from "@/components/status-badge";
 import { programs } from "@/lib/content";
 import { bookServiceHref } from "@/lib/booking";
 import { pageMetadata } from "@/lib/seo";
-import { bookHref, joinHref } from "@/lib/site";
+import { bookHref, joinHref, sessionDetails } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Youth Soccer Programs",
   description:
-    "Book Vanta FC youth soccer programs at Davis Park, St. Johns County: development sessions for ages 5–12, small-group training, skill clinics, and private sessions. Camps, 3v3, and teams coming soon.",
+    "Book Vanta FC youth soccer programs at Davis Park, St. Johns County: development sessions for ages 4–12, small-group training, skill clinics, and private sessions. Camps, 3v3, and teams coming soon.",
   path: "/programs",
   image: "/images/youth-match.jpg",
 });
@@ -25,8 +26,8 @@ export default function ProgramsPage() {
     <>
       <PageHero
         eyebrow="Programs"
-        title="Play with purpose."
-        intro="Vanta FC starts with focused development for players ages 5–12 at Davis Park. More programs will follow as the club grows."
+        title={<>Play with <Mark>purpose</Mark>.</>}
+        intro="Vanta FC starts with focused development for players ages 4–12 at Davis Park. More programs will follow as the club grows."
         image={{ src: "/images/one-v-one.jpg", alt: "Two young players competing for the ball" }}
       >
         <ButtonLink href={bookHref} size="lg">Book a session</ButtonLink>
@@ -34,7 +35,7 @@ export default function ProgramsPage() {
 
       <Section tone="coal">
         <Container>
-          <SectionHeading eyebrow="All programs" title="Choose your path." />
+          <SectionHeading eyebrow="All programs" title={<>Choose your <Mark>path</Mark>.</>} />
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {programs.map((program, i) => (
               <Reveal key={program.slug} delay={(i % 3) * 90}>
@@ -85,7 +86,7 @@ export default function ProgramsPage() {
                 )}
                 <p className="mt-8 text-sm text-steel">
                   {program.bookable
-                    ? "Book through our session calendar. Choose this service when you book."
+                    ? `${sessionDetails.priceLabel} · ${sessionDetails.duration}. Book through our session calendar. Choose this service when you book.`
                     : "Schedule, pricing, and registration dates will be announced. Join the interest list to hear first."}
                 </p>
                 <ButtonLink
@@ -105,7 +106,7 @@ export default function ProgramsPage() {
         <Container className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeading
             eyebrow="Book a session"
-            title="One calendar. Every service."
+            title={<>One calendar. <Mark>Every service</Mark>.</>}
             intro="Development, small-group, clinics, and private sessions at Davis Park."
             className="lg:col-span-8"
           />

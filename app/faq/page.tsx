@@ -2,6 +2,7 @@ import { Container, Section } from "@/components/container";
 import { FaqList } from "@/components/faq-list";
 import { JoinCta } from "@/components/join-cta";
 import { JsonLd } from "@/components/json-ld";
+import { Mark } from "@/components/mark";
 import { PageHero } from "@/components/page-hero";
 import { faqs } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -20,14 +21,14 @@ export default function FaqPage() {
         data={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
+          mainEntity: faqs.filter((f) => f.includeInStructuredData !== false).map((f) => ({
             "@type": "Question",
             name: f.question,
             acceptedAnswer: { "@type": "Answer", text: f.answer },
           })),
         }}
       />
-      <PageHero eyebrow="FAQ" title="Questions, answered." intro="Everything families ask us most. Can't find it? Contact Vanta FC." />
+      <PageHero eyebrow="FAQ" title={<>Questions, <Mark>answered</Mark>.</>} intro="Everything families ask us most. Can't find it? Contact Vanta FC." />
       <Section tone="coal" className="pt-16! sm:pt-20!">
         <Container className="max-w-5xl">
           <FaqList items={faqs} />
