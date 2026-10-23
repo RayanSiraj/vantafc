@@ -1,6 +1,7 @@
 import { AgeGroups } from "@/components/age-groups";
 import { ButtonLink } from "@/components/button";
 import { JoinCta } from "@/components/join-cta";
+import { Mark } from "@/components/mark";
 import { PageHero } from "@/components/page-hero";
 import { Pathway } from "@/components/pathway";
 import { PlayerExperience } from "@/components/player-experience";
@@ -20,7 +21,7 @@ export default function DevelopmentPage() {
     <>
       <PageHero
         eyebrow="Player development"
-        title="Develop. Compete. Lead."
+        title={<>Develop. Compete. <Mark>Lead</Mark>.</>}
         intro="Every Vanta session has a purpose. This is how we develop players — technically, mentally, physically, and socially."
         image={{ src: "/images/first-touch.jpg", alt: "A player taking a first touch on the ball" }}
       >

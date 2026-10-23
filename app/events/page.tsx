@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { EventCard } from "@/components/event-card";
 import { JoinCta } from "@/components/join-cta";
+import { Mark } from "@/components/mark";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { events, plannedEventTypes } from "@/lib/content";
@@ -24,7 +25,7 @@ export default function EventsPage() {
     <>
       <PageHero
         eyebrow="Events"
-        title="Upcoming events."
+        title={<>Upcoming <Mark>events</Mark>.</>}
         intro="Clinics, camps, training sessions, 3v3 events, tournaments, and tryouts will be listed here as they're announced."
         image={{ src: "/images/training-balls.jpg", alt: "Soccer balls gathered on a training field" }}
       />

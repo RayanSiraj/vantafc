@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/button";
 import { Container, Section } from "@/components/container";
+import { Mark } from "@/components/mark";
 import { Reveal } from "@/components/reveal";
 import { StatusBadge } from "@/components/status-badge";
 import { bookHref, joinHref, site } from "@/lib/site";
@@ -34,7 +35,11 @@ export default async function BookPage({
               Book a session
             </p>
             <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl">
-              {selected ? `Book ${selected.name}.` : "Book your session."}
+              {selected ? (
+                <>Book <Mark>{selected.name}</Mark>.</>
+              ) : (
+                <>Book your <Mark>session</Mark>.</>
+              )}
             </h1>
             <p className="mt-8 max-w-md text-lg leading-relaxed text-mist">
               One calendar for every Vanta FC service. Pick a time and tell us which service you&rsquo;re booking.

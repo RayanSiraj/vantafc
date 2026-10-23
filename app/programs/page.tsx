@@ -3,6 +3,7 @@ import { ButtonLink } from "@/components/button";
 import { Container, Section } from "@/components/container";
 import { JoinCta } from "@/components/join-cta";
 import { PageHero } from "@/components/page-hero";
+import { Mark } from "@/components/mark";
 import { ProgramCard } from "@/components/program-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -25,7 +26,7 @@ export default function ProgramsPage() {
     <>
       <PageHero
         eyebrow="Programs"
-        title="Play with purpose."
+        title={<>Play with <Mark>purpose</Mark>.</>}
         intro="Vanta FC starts with focused development for players ages 5–12 at Davis Park. More programs will follow as the club grows."
         image={{ src: "/images/one-v-one.jpg", alt: "Two young players competing for the ball" }}
       >
@@ -34,7 +35,7 @@ export default function ProgramsPage() {
 
       <Section tone="coal">
         <Container>
-          <SectionHeading eyebrow="All programs" title="Choose your path." />
+          <SectionHeading eyebrow="All programs" title={<>Choose your <Mark>path</Mark>.</>} />
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {programs.map((program, i) => (
               <Reveal key={program.slug} delay={(i % 3) * 90}>
@@ -105,7 +106,7 @@ export default function ProgramsPage() {
         <Container className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <SectionHeading
             eyebrow="Book a session"
-            title="One calendar. Every service."
+            title={<>One calendar. <Mark>Every service</Mark>.</>}
             intro="Development, small-group, clinics, and private sessions at Davis Park."
             className="lg:col-span-8"
           />

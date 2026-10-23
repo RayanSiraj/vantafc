@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "../button";
 import { Container } from "../container";
+import { Mark } from "../mark";
 import { bookHref, joinHref, site } from "@/lib/site";
 
 export function HomeHero() {
@@ -34,12 +35,12 @@ export function HomeHero() {
           {site.location.venue} • {site.location.region}
         </p>
         <h1 className="animate-rise mt-6 max-w-6xl font-display text-[clamp(3.6rem,13vw,11.5rem)] [animation-delay:100ms]">
-          Built for the next generation<span className="text-accent">.</span>
+          Built for the next <Mark>generation</Mark><span className="text-accent">.</span>
         </h1>
         <div className="mt-8 grid gap-10 lg:mt-12 lg:grid-cols-12 lg:items-end">
           <p className="animate-rise max-w-xl text-lg leading-relaxed text-mist [animation-delay:220ms] sm:text-xl lg:col-span-6">
             Vanta FC is a youth soccer development organization built to help young players grow through
-            purposeful training, competition, and a love for the game.
+            {" "}<Mark variant="text">purposeful training</Mark>, competition, and a love for the game.
           </p>
           <div className="animate-rise [animation-delay:320ms] lg:col-span-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-end">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { whyVanta } from "@/lib/content";
 import { Container, Section } from "../container";
+import { Mark } from "../mark";
 import { Reveal } from "../reveal";
 import { SectionHeading } from "../section-heading";
 
@@ -9,7 +10,7 @@ export function WhyVanta() {
     <Section tone="chalk" labelledBy="why-title">
       <Container className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <SectionHeading tone="light" eyebrow="The difference" title={<span id="why-title">Why Vanta?</span>} />
+          <SectionHeading tone="light" eyebrow="The difference" title={<span id="why-title">Why <Mark>Vanta</Mark>?</span>} />
           <Reveal delay={120} className="relative mt-12 hidden aspect-[4/5] overflow-hidden lg:block">
             <Image src="/images/dribble.jpg" alt="A young player dribbling the ball at speed" fill sizes="40vw" className="photo-mono object-cover" />
           </Reveal>
