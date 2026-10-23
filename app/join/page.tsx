@@ -5,7 +5,7 @@ import { Mark } from "@/components/mark";
 import { Reveal } from "@/components/reveal";
 import { bookingServices } from "@/lib/booking";
 import { pageMetadata } from "@/lib/seo";
-import { bookHref, sessionDetails, site } from "@/lib/site";
+import { bookHref, playerAges, sessionDetails, site } from "@/lib/site";
 
 const serviceNames = bookingServices.map(({ name }) => name.replace(/Session$/, "Sessions"));
 const bookingServiceList =
@@ -33,7 +33,7 @@ export default async function JoinPage({ searchParams }: { searchParams: Promise
           </p>
           <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl">Ready to <Mark>join Vanta</Mark>?</h1>
           <p className="mt-8 max-w-md text-lg leading-relaxed text-mist">
-            Be the first to know about programs, registration, clinics, camps, and upcoming Vanta FC opportunities.
+            Be the first to know about programs, registration, clinics, camps, and upcoming Vanta FC opportunities. Vanta FC programs are for players ages {playerAges.label}.
           </p>
           <div className="mt-8 border border-white/10 bg-char p-5 sm:p-6">
             <p className="eyebrow text-accent">Booking open</p>

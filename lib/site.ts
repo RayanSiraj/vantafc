@@ -32,6 +32,12 @@ export const site = {
   copyrightYear: 2026,
 };
 
+export const playerAges = {
+  min: 4,
+  max: 12,
+  label: "4–12",
+} as const;
+
 export const sessionDetails = {
   price: "$25",
   priceLabel: "$25 per session",
