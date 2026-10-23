@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Program } from "@/lib/content";
 import { bookServiceHref } from "@/lib/booking";
+import { sessionDetails } from "@/lib/site";
 import { StatusBadge } from "./status-badge";
 
 type ProgramCardProps = { program: Program; index?: number; href?: string };
@@ -36,9 +37,14 @@ export function ProgramCard({ program, index = 0, href }: ProgramCardProps) {
         {program.ages && <p className="eyebrow mb-3 text-accent">{program.ages}</p>}
         <h3 className="font-display text-4xl sm:text-5xl">{program.name}</h3>
         <p className="mt-4 max-w-sm text-mist">{program.summary}</p>
-        <span className="eyebrow mt-6 inline-flex items-center gap-3 text-chalk">
+        {program.bookable && (
+          <p className="mt-5 text-sm text-mist">
+            <span className="text-chalk">{sessionDetails.price}</span> · {sessionDetails.duration}
+          </p>
+        )}
+        <span className={`eyebrow inline-flex items-center gap-3 text-chalk transition-colors group-hover:text-accent ${program.bookable ? "mt-3" : "mt-6"}`}>
           {program.bookable ? "Book now" : "Learn more"}
-          <span className="h-px w-8 bg-chalk transition-all duration-500 ease-out-expo group-hover:w-14" aria-hidden="true" />
+          <span className="h-px w-8 bg-chalk transition-all duration-500 ease-out-expo group-hover:w-14 group-hover:bg-accent" aria-hidden="true" />
         </span>
       </div>
     </Link>

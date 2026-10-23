@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Player Development",
   description:
-    "The Vanta FC player development model: the Vanta Standard, the Discover → Develop → Compete → Lead pathway, and age groups for youth soccer players 5–12 in St. Johns County.",
+    "The Vanta FC player development model: the Vanta Standard, the Discover → Develop → Compete → Lead pathway, and age groups for youth soccer players 4–12 in St. Johns County.",
   path: "/development",
   image: "/images/ball-control.jpg",
 });

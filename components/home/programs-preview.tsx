@@ -14,7 +14,7 @@ export function ProgramsPreview() {
           <SectionHeading
             eyebrow="Programs"
             title={<span id="programs-title">Play with <Mark>purpose</Mark>.</span>}
-            intro="We're starting focused: development programs for ages 5–12. More is on the way."
+            intro="We're starting focused: development programs for ages 4–12. More is on the way."
           />
           <Reveal delay={100}>
             <ButtonLink href="/programs" variant="secondary">View programs</ButtonLink>

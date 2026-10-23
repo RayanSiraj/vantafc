@@ -4,7 +4,7 @@ import { Container, Section } from "@/components/container";
 import { Mark } from "@/components/mark";
 import { Reveal } from "@/components/reveal";
 import { StatusBadge } from "@/components/status-badge";
-import { bookHref, joinHref, site } from "@/lib/site";
+import { bookHref, joinHref, sessionDetails, site } from "@/lib/site";
 import { bookingServices, bookServiceHref, getBooking } from "@/lib/booking";
 import { pageMetadata } from "@/lib/seo";
 
@@ -66,6 +66,10 @@ export default async function BookPage({
                 );
               })}
             </ul>
+            <p className="mt-3 text-sm">
+              <span className="text-accent">{sessionDetails.priceLabel}</span>
+              <span className="text-mist"> · {sessionDetails.duration}</span>
+            </p>
             <ul className="mt-10 space-y-4 border-t border-white/10 pt-8 text-mist">
               <li className="flex gap-4"><span className="text-accent">01</span> Pick a time that works.</li>
               <li className="flex gap-4"><span className="text-accent">02</span> Tell us which service you&rsquo;re booking.</li>
@@ -97,7 +101,7 @@ export default async function BookPage({
                   href={linkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1.5 inline-block min-h-8 py-1.5 -mb-1.5 text-sm text-mist underline underline-offset-4 transition-colors hover:text-chalk"
+                  className="mt-1.5 inline-block min-h-8 py-1.5 -mb-1.5 text-sm text-mist underline underline-offset-4 transition-colors hover:text-accent"
                 >
                   Trouble loading the calendar? Open the booking page
                 </a>

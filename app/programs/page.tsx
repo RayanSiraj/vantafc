@@ -11,12 +11,12 @@ import { StatusBadge } from "@/components/status-badge";
 import { programs } from "@/lib/content";
 import { bookServiceHref } from "@/lib/booking";
 import { pageMetadata } from "@/lib/seo";
-import { bookHref, joinHref } from "@/lib/site";
+import { bookHref, joinHref, sessionDetails } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Youth Soccer Programs",
   description:
-    "Book Vanta FC youth soccer programs at Davis Park, St. Johns County: development sessions for ages 5–12, small-group training, skill clinics, and private sessions. Camps, 3v3, and teams coming soon.",
+    "Book Vanta FC youth soccer programs at Davis Park, St. Johns County: development sessions for ages 4–12, small-group training, skill clinics, and private sessions. Camps, 3v3, and teams coming soon.",
   path: "/programs",
   image: "/images/youth-match.jpg",
 });
@@ -27,7 +27,7 @@ export default function ProgramsPage() {
       <PageHero
         eyebrow="Programs"
         title={<>Play with <Mark>purpose</Mark>.</>}
-        intro="Vanta FC starts with focused development for players ages 5–12 at Davis Park. More programs will follow as the club grows."
+        intro="Vanta FC starts with focused development for players ages 4–12 at Davis Park. More programs will follow as the club grows."
         image={{ src: "/images/one-v-one.jpg", alt: "Two young players competing for the ball" }}
       >
         <ButtonLink href={bookHref} size="lg">Book a session</ButtonLink>
@@ -86,7 +86,7 @@ export default function ProgramsPage() {
                 )}
                 <p className="mt-8 text-sm text-steel">
                   {program.bookable
-                    ? "Book through our session calendar. Choose this service when you book."
+                    ? `${sessionDetails.priceLabel} · ${sessionDetails.duration}. Book through our session calendar. Choose this service when you book.`
                     : "Schedule, pricing, and registration dates will be announced. Join the interest list to hear first."}
                 </p>
                 <ButtonLink

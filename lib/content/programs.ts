@@ -19,7 +19,7 @@ export const programs: Program[] = [
   {
     slug: "development",
     name: "Vanta Development",
-    ages: "Ages 5–12",
+    ages: "Ages 4–12",
     summary: "The foundation of Vanta FC.",
     description:
       "Structured sessions built around technical development, confidence, decision-making, and enjoyment of the game.",

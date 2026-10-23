@@ -9,8 +9,8 @@ export type AgeGroup = {
 /** Conceptual age groups — edit as programs are finalized. */
 export const ageGroups: AgeGroup[] = [
   {
-    ages: "5–6",
-    bands: ["U6", "U7"],
+    ages: "4–6",
+    bands: ["U5", "U6", "U7"],
     stage: "Discover",
     description: "Introduction to soccer, movement, coordination, and basic ball skills.",
   },
