@@ -10,6 +10,7 @@ import {
   validateInterest,
   type InterestSubmission,
 } from "@/lib/interest";
+import { playerAges } from "@/lib/site";
 import { Button } from "./button";
 import { CrestBadge } from "./crest";
 
@@ -137,8 +138,8 @@ export function InterestForm({ defaultProgram = "" }: { defaultProgram?: string 
       <Field id={id("playerName")} label="Player name" required error={errors.playerName}>
         <input {...a11y("playerName")} type="text" autoComplete="off" className={inputClass} />
       </Field>
-      <Field id={id("playerAge")} label="Player age" required error={errors.playerAge}>
-        <input {...a11y("playerAge")} type="number" min={3} max={18} inputMode="numeric" className={inputClass} />
+      <Field id={id("playerAge")} label={`Player age (${playerAges.label})`} required error={errors.playerAge}>
+        <input {...a11y("playerAge")} type="number" min={playerAges.min} max={playerAges.max} step={1} inputMode="numeric" className={inputClass} />
       </Field>
       <Field id={id("experience")} label="Soccer experience" error={errors.experience}>
         <select {...a11y("experience")} defaultValue="" className={`${inputClass} appearance-none`}>

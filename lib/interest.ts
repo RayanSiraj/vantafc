@@ -1,4 +1,4 @@
-import { site } from "./site";
+import { playerAges, site } from "./site";
 
 export type InterestSubmission = {
   parentName: string;
@@ -69,6 +69,11 @@ export function validateInterest(input: Partial<Record<keyof InterestSubmission,
   }
   if (data.email && !EMAIL.test(data.email)) errors.email = "Enter a valid email";
   const age = Number(data.playerAge);
-  if (data.playerAge && (!Number.isFinite(age) || age < 3 || age > 18)) errors.playerAge = "Enter an age between 3 and 18";
+  if (
+    data.playerAge &&
+    (!Number.isInteger(age) || age < playerAges.min || age > playerAges.max)
+  ) {
+    errors.playerAge = `Enter an age between ${playerAges.min} and ${playerAges.max}`;
+  }
   return { data, errors, valid: Object.keys(errors).length === 0 };
 }
